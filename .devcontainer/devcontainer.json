@@ -1,15 +1,20 @@
 {
-    "name": "alx_python:latest",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "name": "Alx",
+    // u can find more info for my image in:
+    // https://hub.docker.com/r/bio75/alx-vscode
+    "image": "bio75/alx-vscode:latest",
+    // if u dont trust bio image's plz build ur own 😋
+    // by uncomment "build" and remove "image"
+    // "build": {
+    //     "dockerfile": "Dockerfile"
+    // },
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-vscode.cpptools",
                 "ms-python.python",
-                "ms-python.autopep8",
-                "PKief.material-icon-theme"
+                "PKief.material-icon-theme",
+                "ms-python.black-formatter"
             ],
             "settings": {
                 "workbench.colorTheme": "Default Dark Modern",
@@ -23,4 +28,10 @@
             }
         }
     }
+    // control resources
+    // "hostRequirements": {
+    //     "cpus": 8,
+    //     "memory": "1gb",
+    //     "storage": "4gb"
+    // }
 }
