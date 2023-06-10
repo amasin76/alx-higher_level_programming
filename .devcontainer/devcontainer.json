@@ -2,12 +2,17 @@
     "name": "Alx",
     // u can find more info for my image in:
     // https://hub.docker.com/r/bio75/alx-vscode
-    "image": "bio75/alx-vscode:latest",
+    "image": "bio75/alx-vscode:1.0",
     // if u dont trust bio image's plz build ur own 😋
     // by uncomment "build" and remove "image"
     // "build": {
     //     "dockerfile": "Dockerfile"
     // },
+    // Increase the max number of open file descriptors for valgrind
+    "runArgs": [
+        "--ulimit",
+        "nofile=1024:1024"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
