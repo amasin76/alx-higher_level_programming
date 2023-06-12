@@ -1,0 +1,139 @@
+{
+    "hello": {
+        "scope": "c",
+        "prefix": "hi",
+        "body": [
+            "#include <stdio.h>\n",
+            "int main()\n{\n",
+            "\tprintf(\"Hello, World!\");$0\n",
+            "\treturn 0;\n}"
+        ],
+        "description": "Print Hello World"
+    },
+    "for": {
+        "scope": "c",
+        "prefix": "fr",
+        "body": [
+            "for (int ${1:i} = 0; ${1:i} < ${2:length}; ${1:i}++)",
+            "{",
+            "\t$3",
+            "}"
+        ],
+        "description": "Code snippet for 'for' loop"
+    },
+    "enum": {
+        "scope": "c",
+        "prefix": "enum",
+        "body": [
+            "enum ${1:MyEnum}",
+            "{",
+            "\t$2",
+            "};"
+        ],
+        "description": "Code snippet for enum"
+    },
+    "#inc": {
+        "scope": "c",
+        "prefix": "inc",
+        "body": [
+            "#include <$1.h>"
+        ],
+        "description": "Code snippet for #include < >"
+    },
+    "#incp": {
+        "scope": "c",
+        "prefix": "incp",
+        "body": [
+            "#include \"$1.h\""
+        ],
+        "description": "Code snippet for #include \" \""
+    },
+    "#incio": {
+        "scope": "c",
+        "prefix": "#io",
+        "body": [
+            "#include <stdio.h>"
+        ],
+        "description": "Code snippet for include stdio.h"
+    },
+    "#incm": {
+        "scope": "c",
+        "prefix": "#m",
+        "body": [
+            "#include \"main.h\""
+        ],
+        "description": "Code snippet for include main.h"
+    },
+    "create function": {
+        "scope": "c",
+        "prefix": "fn",
+        "body": [
+            "${1:type} ${2:funcName () {",
+            "\n\t$3\n",
+            "\treturn t;",
+            "};"
+        ],
+        "description": "Creates a function that returns the int type"
+    },
+    "Print variable of type integer": {
+        "scope": "c",
+        "prefix": "pint",
+        "body": [
+            "printf(\"$0 :>> %d\\n\", $0);"
+        ],
+        "description": "Calls printf() to log value of variable of type signed integer"
+    },
+    "Print variable of type char": {
+        "scope": "c",
+        "prefix": "pcha",
+        "body": [
+            "printf(\"$0 :>> %c\\n\", $0);"
+        ],
+        "description": "Calls printf() to log value of variable of type char"
+    },
+    "Print variable of type pointer": {
+        "scope": "c",
+        "prefix": "ppoint",
+        "body": [
+            "printf(\"$0 :>> %p\\n\", (void *) $0);"
+        ],
+        "description": "Calls printf() to log value of variable of type pointer"
+    },
+    "Print variable of type size_t": {
+        "scope": "c",
+        "prefix": "psiz",
+        "body": [
+            "printf(\"$0 :>> %zu\\n\", $0);"
+        ],
+        "description": "Calls printf() to log value of variable of type size_t"
+    },
+    "Allocate memory using calloc": {
+        "scope": "c",
+        "prefix": "cal",
+        "body": [
+            "$1*ptr = ($1*)calloc($2, sizeof($1));",
+            "",
+            "if (ptr == NULL)",
+            "{",
+            "  printf(\"Memory allocation failed!\\n\");",
+            "  exit(0);",
+            "}",
+            "",
+            "free(ptr);"
+        ],
+        "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
+    },
+    "Creates a header include guard": {
+        "scope": "c",
+        "prefix": "ig",
+        "body": [
+            "#ifndef ${TM_FILENAME/(?:^.*\\\\)?(\\w+)\\W?/${1:/upcase}_/g}",
+            "#define ${TM_FILENAME/(?:^.*\\\\)?(\\w+)\\W?/${1:/upcase}_/g}",
+            "",
+            "// Code for header body",
+            "",
+            "#endif //${TM_FILENAME/(?:^.*\\\\)?(\\w+)\\W?/${1:/upcase}_/g}"
+        ],
+        "description": "Creates header include guard based on file name"
+    }
+}

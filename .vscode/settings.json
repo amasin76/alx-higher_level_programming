@@ -1,19 +1,21 @@
 {
 	// Use tabs instead of spaces
 	"editor.tabSize": 4,
-	"editor.insertSpaces": true,
+	"editor.insertSpaces": false,
 	"editor.detectIndentation": true,
 	"files.insertFinalNewline": true,
 
 	// Limit column width
 	"editor.wordWrap": "on",
 	"editor.wordWrapColumn": 80,
-	
-	// Linting and Formatting
+
+	// Linting and formatting for py files
 	"python.linting.enabled": true,
 	"python.linting.pycodestyleEnabled": true,
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter"
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4
 	},
 	"python.formatting.provider": "black"
 }
