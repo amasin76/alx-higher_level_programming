@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-class Square:
-    """This module defines a Square class"""
+"""This module defines a Square class"""
 
+
+class Square:
     def __init__(self, size=0):
         """Initialize a new Square object with optional size argument"""
         self.size = size
