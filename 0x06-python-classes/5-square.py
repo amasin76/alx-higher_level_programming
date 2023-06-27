@@ -47,3 +47,16 @@ class Square:
         Public instance method that returns the current square area
         """
         return self.__size**2
+
+    def my_print(self):
+        """
+        Public instance method that prints in stdout the square with the
+        character #
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print("#", end="")
+                print()
